@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "./Header";
 import { BANNER_IMG_URL } from "./../constants/common";
+import { validateLoginInput } from "./../utils/validator";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
+    const [error, setError] = useState(null);
+    const email = useRef(null);
+    const password = useRef(null);
+    const fullName = useRef(null);
 
     const toggleSignUpHandler = () => {
         setIsSignInForm(!isSignInForm);
+    }
+
+    const loginHandler = () => {
+        const message = validateLoginInput(
+            email.current.value,
+            password.current.value,
+            fullName.current?.value,
+            isSignInForm);
+
+        setError(message);
     }
 
     return (
@@ -20,24 +35,30 @@ const Login = () => {
                 />
             </div>
 
-            <form className="absolute px-14 py-10 bg-black w-1/3 my-28 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+            <form onSubmit={(e) => e.preventDefault()} className="absolute px-14 py-10 bg-black w-1/3 my-28 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
                 <h3 className="py-6 font-bold text-3xl">{isSignInForm ? `Sign In` : `Sign Up`}</h3>
                 {!isSignInForm && <input
+                    ref={fullName}
                     type="text"
-                    placeholder="Full Namme"
+                    placeholder="Full Name"
                     className="px-6 py-3 my-3 w-full rounded-sm bg-transparent border-white border"
                 />}
                 <input
+                    ref={email}
                     type="text"
                     placeholder="Email Address"
                     className="px-6 py-3 my-3 w-full rounded-sm bg-transparent border-white border"
                 />
                 <input
+                    ref={password}
                     type="password"
                     placeholder="Password"
                     className="px-6 py-3 my-3 w-full rounded-sm bg-transparent border-white border"
                 />
-                <button className="p-4 my-5 w-full rounded-sm bg-red-700">
+
+                {error && <p className="text-red-700 py-2 font-bold">{error}</p>}
+
+                <button onClick={loginHandler} className="p-4 my-5 w-full rounded-sm bg-red-700">
                     {isSignInForm ? `Sign In` : `Sign Up`}
                 </button>
 

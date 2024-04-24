@@ -50,8 +50,8 @@ const Header = () => {
                 />
                 {user && <div className="m-4 flex cursor-pointer" onClick={openSignOutOption}>
                         <img className="w-8 h-8 rounded-lg" src={user.photoURL} alt="profile-icon" />
-                        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.998 17 7-8h-14z"></path></svg>
-                        {isSignInOptionVisible && <div className="absolute text-black font-bold mt-12 flex cursor-pointer flex-row-reverse" onClick={signOutHandler}>Sign Out</div>}
+                        <svg className="m-2" stroke="white" fill="white" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.998 17 7-8h-14z"></path></svg>
+                        {isSignInOptionVisible && <div className="absolute text-white font-bold mt-12 flex cursor-pointer flex-row-reverse" onClick={signOutHandler}>Sign Out</div>}
                     </div>
                 }
             </div>

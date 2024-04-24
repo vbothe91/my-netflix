@@ -35,13 +35,4 @@
     - Use embed code with fetched video id
     - fix background video UI
 
-
-- planning how to show data.. 
-    --> Browse --> Header, MainContainer, MovieListContianer..
-    --> MainContainer - VideoTitle(title, description, buttons), videoBackgorund(Play video)
-    --> Secondary container (Movies with horizontal list)
-
-
-
-- MainContainer -> VideoTitle, Videobackground
-- SecondaryContainer
+- Movie list for diffrent categories.

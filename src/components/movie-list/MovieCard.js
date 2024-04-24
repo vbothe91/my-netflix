@@ -1,4 +1,4 @@
-import { TMDB_IMG_PATH } from "../constants/common";
+import { TMDB_IMG_PATH } from "../../constants/common";
 
 const MovieCard = ({movie}) => {
     const {backdrop_path, original_title} = movie;

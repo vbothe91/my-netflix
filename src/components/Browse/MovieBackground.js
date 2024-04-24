@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import useBackgroundMovie from "./../hooks/useBackgroundMovie";
+import useBackgroundMovie from "../../hooks/useBackgroundMovie";
 
 const MovieBackground = ({movieId}) => {
     const backgroundTrailer = useSelector((state) => state.movies?.MovieBackground);

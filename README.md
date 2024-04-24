@@ -36,3 +36,5 @@
     - fix background video UI
 
 - Movie list for diffrent categories.
+- Added api check if data already present inredux.
+- Added folder strucure

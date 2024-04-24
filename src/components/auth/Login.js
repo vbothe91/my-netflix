@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
-import Header from "./Header";
-import { BANNER_IMG_URL, AVATAR_URL } from "./../constants/common";
-import { validateLoginInput } from "./../utils/validator";
-import { auth } from "./../utils/firebase";
-import { addUser } from "./../utils/userSlice";
+import Header from "../layout/Header";
+import { BANNER_IMG_URL, AVATAR_URL } from "../../constants/common";
+import { validateLoginInput } from "../../utils/validator";
+import { auth } from "../../utils/firebase/firebase";
+import { addUser } from "../../utils/store/userSlice";
 import { useDispatch } from "react-redux";
 
 const Login = () => {

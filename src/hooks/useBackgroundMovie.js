@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addBackgroundVideo } from "../utils/movieSlice";
+import { addBackgroundVideo } from "../utils/store/movieSlice";
 import { API_OPTIONS } from "../constants/common";
 
 const useBackgroundMovie = (movieId) => {

@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { auth } from "./../utils/firebase";
-import { LOGO_IMG_URL } from "./../constants/common";
-import { addUser, removeUser } from "./../utils/userSlice";
+import { auth } from "../../utils/firebase/firebase";
+import { LOGO_IMG_URL } from "../../constants/common";
+import { addUser, removeUser } from "../../utils/store/userSlice";
  
 const Header = () => {
     const [isSignInOptionVisible, setIsSignInOptionVisible] = useState(false);
